@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class CheckPalindrom {
+
+    static int checkpalindrom(int n) {
+
+        int renum = 0;
+        while (n > 0) {
+            int ld = n % 10;
+            renum = (renum * 10) + ld;
+            n = n / 10;
+        }
+
+        return renum;
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the no.");
+        int n = sc.nextInt();
+        int dup = n;
+        int renum = checkpalindrom(n);
+        if (dup == renum) {
+            System.out.println("Palindrom No.");
+        } else {
+            System.out.println("Not Palindrom No.");
+        }
+        sc.close();
+    }
+}
